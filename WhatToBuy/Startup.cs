@@ -5,10 +5,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Microsoft.EntityFrameworkCore;
-using WhatToBuy.Data;
-using WhatToBuy.Controllers;
+using WhatToBuyAPI.Data;
+using WhatToBuyAPI.Controllers;
 
-namespace WhatToBuy
+namespace WhatToBuyAPI
 {
     public class Startup
     {
@@ -28,7 +28,7 @@ namespace WhatToBuy
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WhatToBuy", Version = "v1" });
             });
 
-            services.AddDbContext<WhatToBuyContext>(options =>
+            services.AddDbContext<WhatToBuyAPIContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("WhatToBuyContext")));
         }
 

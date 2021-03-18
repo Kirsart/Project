@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace WhatToBuy.Models
+﻿
+namespace WhatToBuyAPI.Models
 {
     public enum ProductListStatusEnum
     {

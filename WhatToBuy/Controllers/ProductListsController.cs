@@ -5,18 +5,18 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using WhatToBuy.Data;
-using WhatToBuy.Models;
+using WhatToBuyAPI.Data;
+using WhatToBuyAPI.Models;
 
-namespace WhatToBuy.Controllers
+namespace WhatToBuyAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class ProductListsController : ControllerBase
     {
-        private readonly WhatToBuyContext _context;
+        private readonly WhatToBuyAPIContext _context;
 
-        public ProductListsController(WhatToBuyContext context)
+        public ProductListsController(WhatToBuyAPIContext context)
         {
             _context = context;
         }
@@ -25,14 +25,14 @@ namespace WhatToBuy.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ProductList>>> GetProductList()
         {
-            return await _context.ProductLists.ToListAsync();
+            return await _context.ProductList.ToListAsync();
         }
 
         // GET: api/ProductLists/5
         [HttpGet("{id}")]
         public async Task<ActionResult<ProductList>> GetProductList(Guid id)
         {
-            var productList = await _context.ProductLists.FindAsync(id);
+            var productList = await _context.ProductList.FindAsync(id);
 
             if (productList == null)
             {
@@ -78,7 +78,7 @@ namespace WhatToBuy.Controllers
         [HttpPost]
         public async Task<ActionResult<ProductList>> PostProductList(ProductList productList)
         {
-            _context.ProductLists.Add(productList);
+            _context.ProductList.Add(productList);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetProductList", new { id = productList.ProductListId }, productList);
@@ -88,13 +88,13 @@ namespace WhatToBuy.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProductList(Guid id)
         {
-            var productList = await _context.ProductLists.FindAsync(id);
+            var productList = await _context.ProductList.FindAsync(id);
             if (productList == null)
             {
                 return NotFound();
             }
 
-            _context.ProductLists.Remove(productList);
+            _context.ProductList.Remove(productList);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -102,7 +102,7 @@ namespace WhatToBuy.Controllers
 
         private bool ProductListExists(Guid id)
         {
-            return _context.ProductLists.Any(e => e.ProductListId == id);
+            return _context.ProductList.Any(e => e.ProductListId == id);
         }
     }
 }
