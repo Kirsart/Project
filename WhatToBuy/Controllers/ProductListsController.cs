@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WhatToBuyAPI.Data;
-using WhatToBuyAPI.Models;
+using WhatToBuyLibrary.Models;
 
 namespace WhatToBuyAPI.Controllers
 {

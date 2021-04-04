@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using WhatToBuyAPI.Models;
+using WhatToBuyLibrary.Models;
 
 namespace WhatToBuyAPI.Data
 {

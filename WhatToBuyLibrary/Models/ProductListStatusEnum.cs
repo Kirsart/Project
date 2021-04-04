@@ -1,5 +1,5 @@
 ﻿
-namespace WhatToBuyAPI.Models
+namespace WhatToBuyLibrary.Models
 {
     public enum ProductListStatusEnum
     {

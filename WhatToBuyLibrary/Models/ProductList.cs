@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace WhatToBuyAPI.Models
+namespace WhatToBuyLibrary.Models
 {
     public class ProductList
     {

@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WhatToBuyAPI.Models
+namespace WhatToBuyLibrary.Models
 {
     /// <summary>
     /// Элемент списка продуктов

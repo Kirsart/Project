@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace WhatToBuyAPI.Models
+namespace WhatToBuyLibrary.Models
 {
     /// <summary>
     /// Продукт
