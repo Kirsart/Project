@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace WhatToBuyAPI.Models
 {
@@ -17,7 +18,15 @@ namespace WhatToBuyAPI.Models
 
         public string Notes { get; set; }
 
-        public virtual List<ProductItem> ProductItems { get; set; }
+        public virtual ICollection<ProductItem> ProductItems { get; set; }
 
+
+        /// <summary>
+        /// Конструктор по умолчанию
+        /// </summary>
+        public ProductList()
+        {
+            this.ProductItems = new List<ProductItem>();
+        }
     }
 }
